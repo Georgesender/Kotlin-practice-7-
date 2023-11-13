@@ -1,0 +1,48 @@
+fun main(){
+   val n1 = formatSeconds()
+   val n2 = minutes()
+   val n3 = hours()
+    println("$n3:$n2:$n1")
+    
+    
+}
+
+
+fun formatSeconds(): Int{
+    val seconds = seconds() % 60
+return seconds
+}
+fun seconds() : Int{
+     val totalSeconds = 2
+    return totalSeconds
+}
+fun min() : Int{
+     val minutes = seconds() / 60
+    return minutes
+}
+fun minutes() : Int{
+    if(min() > 60){
+        val min = 59 
+        return min
+    } else if(min()<60){
+            val min = seconds() / 60
+        return min
+    }
+
+    return -1
+}
+fun hours() : Int{
+    if(seconds() >= 86399){
+        val hour = 23 
+        return hour
+        
+    }
+    else if(minutes()>59){
+        val hour = min() / 60 
+        return hour
+    }else if(minutes()<59){
+        val hour = 0
+        return hour
+    }
+    return -1
+}
